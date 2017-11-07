@@ -336,6 +336,8 @@
 
     <script id="ib-status-tpl" type="text/mustache-template">
       <ul>
+        {{#uris}}<li><strong>下载地址: </strong><a target=_blank href="{{.}}">{{.}}</a>{{/uris}}
+        {{#infoHash}}<li><strong>校验信息: </strong><a target=_blank href="magnet:?xt=urn:btih:{{infoHash}}">{{infoHash}}</a></li>{{/infoHash}}
         <li><strong>任务大小: </strong>{{#_v.format_size}}{{totalLength}}{{/_v.format_size}} ({{numPieces}} @ {{#_v.format_size}}{{pieceLength}}{{/_v.format_size}})</li>
         <li><strong>任务状态: </strong>{{status}} {{error_msg}}</li>
         <li><strong>保存路径: </strong>{{dir}}</li>
